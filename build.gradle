@@ -1,3 +1,30 @@
+buildscript {
+    repositories {
+        // Essential for the extractor dependency
+        maven {
+            url "https://releases.jfrog.io/artifactory/oss-releases/"
+        }
+        // Explicitly define the Gradle Plugin Portal URL
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        mavenCentral()
+	// Option 1: Use the Gradle Plugin Portal (recommended for newer versions)
+	// gradlePluginPortal()
+	// Option 2: Use JCenter (legacy option)
+	// jcenter() 
+    }
+    dependencies {
+        // classpath group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.4.0'
+        classpath group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '5.2.3'
+    }
+}
+
+plugins {
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+// Run this command to build: ./gradlew shadowJar
+
 group 'org.openmbee.junit'
 version '1.0.0'
 
@@ -15,37 +42,39 @@ if (buildTag == null || buildTag.isEmpty() || project.getProperties().getOrDefau
 }
 String buildNumber = project.getProperties().getOrDefault('buildNumber', System.currentTimeSeconds());
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.4.0'
-    }
-}
-
 repositories {
-    jcenter()
+    // Explicitly define the Gradle Plugin Portal URL
+    maven {
+	url "https://plugins.gradle.org/m2/"
+    }
+    mavenCentral()
+    // Option 1: Use the Gradle Plugin Portal (recommended for newer versions)
+    // gradlePluginPortal()
+    // Option 2: Use JCenter (legacy option)
+    // jcenter() 
 }
 
 dependencies {
-    compile "org.projectlombok:lombok:1.16.16"
+    // Replaces 'compile' for Lombok
+    compileOnly 'org.projectlombok:lombok:1.16.16'
+    annotationProcessor 'org.projectlombok:lombok:1.16.16'
+    // compile "org.projectlombok:lombok:1.16.16"
 
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
-    compile group: 'commons-io', name: 'commons-io', version: '2.5'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.5'
 
-    compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.2.12'
-    compile group: 'com.sun.xml.bind', name: 'jaxb-core', version: '2.2.11'
-    compile group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '2.2.11'
+    implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.2.12'
+    implementation group: 'com.sun.xml.bind', name: 'jaxb-core', version: '2.2.11'
+    implementation group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '2.2.11'
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = 'sources'
+    archiveClassifier = 'sources'
     from sourceSets.main.allSource
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
+    archiveClassifier = 'javadoc'
     from javadoc.destinationDir
 }
 
@@ -57,10 +86,10 @@ publishing {
         mavenJava(MavenPublication) {
             from components.java
             artifact sourcesJar {
-                classifier 'sources'
+                archiveClassifier = 'sources'
             }
             artifact javadocJar {
-                classifier 'javadoc'
+                archiveClassifier = 'javadoc'
             }
         }
     }
