@@ -31,7 +31,7 @@ version '1.0.0'
 apply plugin: 'java'
 apply plugin: 'idea'
 
-sourceCompatibility = 1.8
+sourceCompatibility = 11
 
 String buildTag = project.getProperties().get('buildTag')
 if (buildTag != null && buildTag != version) {
@@ -56,8 +56,8 @@ repositories {
 
 dependencies {
     // Replaces 'compile' for Lombok
-    compileOnly 'org.projectlombok:lombok:1.16.16'
-    annotationProcessor 'org.projectlombok:lombok:1.16.16'
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
     // compile "org.projectlombok:lombok:1.16.16"
 
     implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
