@@ -15,15 +15,11 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.net.URL;
 
-/**
- * Skeleton for an Integration Test.
- * Note: Use the 'IT' suffix to differentiate from Unit Tests.
- */
-class IntegrationTestSuiteIT {
+class IntegrationTest {
 
     @Test
     @DisplayName("Test unmarshalling of JUnit report")
-    void testServiceIntegration() throws Exception {
+    void testUnmarshalling() throws Exception {
         URL resource = getClass().getClassLoader().getResource("org/openmbee/junit/report.xml");
         if (resource == null) {
             throw new IllegalArgumentException("File not found in resources!");
