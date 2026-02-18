@@ -1,24 +1,50 @@
-<testsuite name="rentacat.spec.ts" timestamp="2026-02-18T22:26:39.397Z" hostname="chromium" tests="11" failures="0" skipped="0" time="21.322" errors="0">
-<testcase name="TEST-1-RESET" classname="rentacat.spec.ts" time="1.437">
+<testsuites id="" name="" tests="22" failures="0" skipped="0" errors="0" time="1.9823330000000003">
+<testsuite name="rentacat.spec.ts" timestamp="2026-02-18T23:08:20.072Z" hostname="chromium" tests="11" failures="0" skipped="0" time="0.662" errors="0">
+<testcase name="TEST-1-RESET" classname="rentacat.spec.ts" time="0.094">
 </testcase>
-<testcase name="TEST-2-CATALOG" classname="rentacat.spec.ts" time="1.372">
+<testcase name="TEST-2-CATALOG" classname="rentacat.spec.ts" time="0.074">
 </testcase>
-<testcase name="TEST-3-LISTING" classname="rentacat.spec.ts" time="1.233">
+<testcase name="TEST-3-LISTING" classname="rentacat.spec.ts" time="0.086">
 </testcase>
-<testcase name="TEST-4-RENT-A-CAT" classname="rentacat.spec.ts" time="1.521">
+<testcase name="TEST-4-RENT-A-CAT" classname="rentacat.spec.ts" time="0.061">
 </testcase>
-<testcase name="TEST-5-RENT" classname="rentacat.spec.ts" time="1.359">
+<testcase name="TEST-5-RENT" classname="rentacat.spec.ts" time="0.054">
 </testcase>
-<testcase name="TEST-6-RETURN" classname="rentacat.spec.ts" time="1.114">
+<testcase name="TEST-6-RETURN" classname="rentacat.spec.ts" time="0.045">
 </testcase>
-<testcase name="TEST-7-FEED-A-CAT" classname="rentacat.spec.ts" time="1.135">
+<testcase name="TEST-7-FEED-A-CAT" classname="rentacat.spec.ts" time="0.05">
 </testcase>
-<testcase name="TEST-8-FEED" classname="rentacat.spec.ts" time="9.066">
+<testcase name="TEST-8-FEED" classname="rentacat.spec.ts" time="0.044">
 </testcase>
-<testcase name="TEST-9-GREET-A-CAT" classname="rentacat.spec.ts" time="1.058">
+<testcase name="TEST-9-GREET-A-CAT" classname="rentacat.spec.ts" time="0.05">
 </testcase>
-<testcase name="TEST-10-GREET-A-CAT-WITH-NAME" classname="rentacat.spec.ts" time="0.562">
+<testcase name="TEST-10-GREET-A-CAT-WITH-NAME" classname="rentacat.spec.ts" time="0.055">
 </testcase>
-<testcase name="TEST-11-FEED-A-CAT-SCREENSHOT" classname="rentacat.spec.ts" time="1.465">
+<testcase name="TEST-11-FEED-A-CAT-SCREENSHOT" classname="rentacat.spec.ts" time="0.049">
 </testcase>
 </testsuite>
+<testsuite name="rentacatbuggy.spec.ts" timestamp="2026-02-18T23:08:20.072Z" hostname="chromium" tests="11" failures="0" skipped="0" time="0.662" errors="0">
+<testcase name="TEST-1-RESET" classname="rentacatbuggy.spec.ts" time="0.044">
+</testcase>
+<testcase name="TEST-2-CATALOG" classname="rentacatbuggy.spec.ts" time="0.049">
+</testcase>
+<testcase name="TEST-3-LISTING" classname="rentacatbuggy.spec.ts" time="0.053">
+</testcase>
+<testcase name="TEST-4-RENT-A-CAT" classname="rentacatbuggy.spec.ts" time="0.116">
+</testcase>
+<testcase name="TEST-5-RENT" classname="rentacatbuggy.spec.ts" time="0.047">
+</testcase>
+<testcase name="TEST-6-RETURN" classname="rentacatbuggy.spec.ts" time="0.071">
+</testcase>
+<testcase name="TEST-7-FEED-A-CAT" classname="rentacatbuggy.spec.ts" time="0.084">
+</testcase>
+<testcase name="TEST-8-FEED" classname="rentacatbuggy.spec.ts" time="0.057">
+</testcase>
+<testcase name="TEST-9-GREET-A-CAT" classname="rentacatbuggy.spec.ts" time="0.051">
+</testcase>
+<testcase name="TEST-10-GREET-A-CAT-WITH-NAME" classname="rentacatbuggy.spec.ts" time="0.041">
+</testcase>
+<testcase name="TEST-11-FEED-A-CAT-SCREENSHOT" classname="rentacatbuggy.spec.ts" time="0.049">
+</testcase>
+</testsuite>
+</testsuites>
