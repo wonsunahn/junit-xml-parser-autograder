@@ -113,3 +113,21 @@ artifactory {
     }
 }
 artifactoryPublish.dependsOn(assemble, sourcesJar, javadocJar)
+
+testing {
+    suites {
+        // Define a new suite named 'integrationTest'
+        integrationTest(JvmTestSuite) {
+            // Assign a testing framework (e.g., JUnit Jupiter/JUnit 5)
+            useJUnitJupiter('5.10.2') 
+
+            dependencies {
+                // Ensure the suite can see your main application code
+                implementation project() 
+
+                implementation 'javax.xml.bind:jaxb-api:2.2.12'
+                implementation 'javax.activation:activation:1.1'
+            }
+        }
+    }
+}
