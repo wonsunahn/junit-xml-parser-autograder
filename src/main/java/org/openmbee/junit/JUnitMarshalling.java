@@ -2,7 +2,7 @@ package org.openmbee.junit;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringEscapeUtils;
-import org.openmbee.junit.model.JUnitTestSuite;
+import org.openmbee.junit.model.JUnitTestSuites;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -19,8 +19,8 @@ public class JUnitMarshalling {
     private static final String systemOutStart = "<system-out>", systemOutEnd = "</system-out>";
     private static final String systemErrStart = "<system-err>", systemErrEnd = "</system-err>";
 
-    public static JUnitTestSuite unmarshalTestSuite(InputStream stream) throws JAXBException, XMLStreamException, IOException {
-        JAXBContext context = JAXBContext.newInstance(JUnitTestSuite.class);
+    public static JUnitTestSuites unmarshalTestSuite(InputStream stream) throws JAXBException, XMLStreamException, IOException {
+        JAXBContext context = JAXBContext.newInstance(JUnitTestSuites.class);
 
         XMLInputFactory xif = XMLInputFactory.newFactory();
         XMLStreamReader xsr = xif.createXMLStreamReader(createEscapedJUnitInputStream(stream));
@@ -32,7 +32,7 @@ public class JUnitMarshalling {
         });
 
         Unmarshaller unmarshaller = context.createUnmarshaller();
-        return (JUnitTestSuite) unmarshaller.unmarshal(xsr);
+        return (JUnitTestSuites) unmarshaller.unmarshal(xsr);
     }
 
     public static InputStream createEscapedJUnitInputStream(InputStream stream) throws IOException {

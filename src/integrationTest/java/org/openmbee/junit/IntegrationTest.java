@@ -4,9 +4,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import org.openmbee.junit.model.JUnitTestSuite;
+import org.openmbee.junit.model.JUnitTestSuites;
 import javax.xml.bind.JAXBException;
 import javax.xml.stream.XMLStreamException;
 import java.io.FileInputStream;
@@ -27,8 +28,9 @@ class IntegrationTest {
         File file = new File(resource.toURI());
         FileInputStream fileInputStream = new FileInputStream(file);
         // FileInputStream fileInputStream = new FileInputStream(Paths.get("/org/openmbee/junit/report.xml").toFile());
-        JUnitTestSuite testSuite = JUnitMarshalling.unmarshalTestSuite(fileInputStream);
+        JUnitTestSuites testSuites = JUnitMarshalling.unmarshalTestSuite(fileInputStream);
         // Then: Assert the result
-        assertNotNull(testSuite, "The JUnit test suite should be loaded.");
+        assertNotNull(testSuites, "The JUnit test suite should be loaded.");
+        assertEquals(2, testSuites.getTestSuites().size(), "The total number of tests should be 2.");
     }
 }
