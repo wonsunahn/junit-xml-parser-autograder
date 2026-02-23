@@ -41,7 +41,7 @@ public class JUnitTestSuites {
     private double time;
 
     @XmlElement(name = "testsuite")
-    private List<JUnitTestCase> testSuites;
+    private List<JUnitTestSuite> testSuites;
 
     @XmlElement(name = "system-out")
     private String systemOut;
